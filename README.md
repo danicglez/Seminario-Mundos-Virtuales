@@ -84,7 +84,7 @@ Podemos ver que los matrices son diferentes por lo que no se obtienen los mismos
 
 ***3. Sitúa la esfera de radio 1 en el campo de visión de la cámara y configura un volumen de vista que la recorte parcialmente.***
 
-Por ejemplo: tenenmos la esfera en la posición $p = (0,2,0)$$ y la cámara en $$q = (0,0,-10)$.
+Por ejemplo: tenenmos la esfera en la posición $p = (0,2,0)$ y la cámara en $q = (0,0,-10)$.
 
 Si cambiamos el plano cerca en $z=9.7$, recortamos la esfera:
 
