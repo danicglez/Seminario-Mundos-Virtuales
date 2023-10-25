@@ -12,6 +12,7 @@ $$\begin{pmatrix}
 0 & 0 & 1 & 0\\
 t_x & t_y & t_z & 1
 \end{pmatrix}$$
+
 Donde $$(t_x, t_y, t_z)$$ es el vector de desplazamiento.
 
 *b. Rotaciones:* `transform.Rotate()`
@@ -23,19 +24,18 @@ $$\begin{pmatrix}
 \sin \phi & \cos \phi & 0\\
 t_x & t_y & 1
 \end{pmatrix}$$
-Donde $$\phi$$ es el angulo de la rotacion.
 
+Donde $$\phi$$ es el angulo de la rotacion.
 Para representar las rotaciones 3D se emplean 3 matrices distintas y dependiendo de la escogida la rotación se realiza en el plano y-z sobre el eje x, x-z sobre el eje y o x-y sobre el eje z.
 
 *c. Escalado:* `GameObject object`: `object.transform.localScale += new Vector3(s_x, s_y, s_z)`
-
-
 
 $$\begin{pmatrix}s_x & 0 & 0 & 0\\
 0 & s_y & 0 & 0\\
 0 & 0 & s_z & 0\\
 0 & 0 & 0 & 1
 \end{pmatrix}$$
+
 Donde $$(s_x, s_y, s_z)$$ es el vector de escala.
 
 ***2. Como trasladarías la cámara 2 metros en cada uno de los ejes y luego la rotas 30º alrededor del eje Y?. Rota la cámara alrededor del eje Y 30ª y desplázala 2 metros en cada uno de los ejes. ¿Obtendrías el mismo resultado en ambos casos?. Justifica el resultado.***
