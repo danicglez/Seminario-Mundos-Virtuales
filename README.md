@@ -13,7 +13,7 @@ $$\begin{pmatrix}
 t_x & t_y & t_z & 1
 \end{pmatrix}$$
 
-Donde $$(t_x, t_y, t_z)$$ es el vector de desplazamiento.
+Donde $(t_x, t_y, t_z)$ es el vector de desplazamiento.
 
 *b. Rotaciones:* `transform.Rotate()`
 
