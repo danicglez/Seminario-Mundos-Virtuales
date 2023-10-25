@@ -88,7 +88,6 @@ Por ejemplo: tenenmos la esfera en la posición $p = (0,2,0)$ y la cámara en $q
 
 Si cambiamos el plano cerca en $z=9.7$, recortamos la esfera:
 
-Imagen de unity:
 ![recorte de la esfera](https://github.com/danicglez/Seminario-Mundos-Virtuales/blob/main/pregunta_3.PNG)
 
 ***4. Sitúa la esfera de radio 1 en el campo de visión de la cámara y configura el volumen de vista para que la deje fuera de la vista.***
