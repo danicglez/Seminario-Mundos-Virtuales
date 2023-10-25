@@ -25,7 +25,7 @@ $$\begin{pmatrix}
 t_x & t_y & 1
 \end{pmatrix}$$
 
-Donde $$\phi$$ es el angulo de la rotacion.
+Donde $\phi$ es el angulo de la rotacion.
 Para representar las rotaciones 3D se emplean 3 matrices distintas y dependiendo de la escogida la rotación se realiza en el plano y-z sobre el eje x, x-z sobre el eje y o x-y sobre el eje z.
 
 *c. Escalado:* `GameObject object`: `object.transform.localScale += new Vector3(s_x, s_y, s_z)`
@@ -36,7 +36,7 @@ $$\begin{pmatrix}s_x & 0 & 0 & 0\\
 0 & 0 & 0 & 1
 \end{pmatrix}$$
 
-Donde $$(s_x, s_y, s_z)$$ es el vector de escala.
+Donde $(s_x, s_y, s_z)$ es el vector de escala.
 
 ***2. Como trasladarías la cámara 2 metros en cada uno de los ejes y luego la rotas 30º alrededor del eje Y?. Rota la cámara alrededor del eje Y 30ª y desplázala 2 metros en cada uno de los ejes. ¿Obtendrías el mismo resultado en ambos casos?. Justifica el resultado.***
 
@@ -58,7 +58,7 @@ $$R =\begin{pmatrix}
 0 & 0 & 0 & 1
 \end{pmatrix}$$
 
-Teniendo el punto $$p = (x,y,z)$$, que es donde se encuentra la cámara, y queremos realizar las operaciones anteriores, tenemos que multiplicar el punto con las matrices.
+Teniendo el punto $p = (x,y,z)$, que es donde se encuentra la cámara, y queremos realizar las operaciones anteriores, tenemos que multiplicar el punto con las matrices.
 
 *a. Primero trasladar, luego rotar:*
 
@@ -84,9 +84,9 @@ Podemos ver que los matrices son diferentes por lo que no se obtienen los mismos
 
 ***3. Sitúa la esfera de radio 1 en el campo de visión de la cámara y configura un volumen de vista que la recorte parcialmente.***
 
-Por ejemplo: tenenmos la esfera en la posición $$p = (0,2,0)$$ y la cámara en $$q = (0,0,-10)$$.
+Por ejemplo: tenenmos la esfera en la posición $p = (0,2,0)$$ y la cámara en $$q = (0,0,-10)$.
 
-Si cambiamos el plano cerca en $$z=9.7$$, recortamos la esfera:
+Si cambiamos el plano cerca en $z=9.7$, recortamos la esfera:
 
 Imagen de unity:
 ![recorte de la esfera](https://github.com/danicglez/Seminario-Mundos-Virtuales/blob/main/pregunta_3.PNG)
@@ -95,9 +95,9 @@ Imagen de unity:
 
 La esfera y la cámara tienen la misma posición.
 
-Por ejemplo podemos cambiar el plano cerca en $$z=20$$ y la esfera está fuera de la vista.
+Por ejemplo podemos cambiar el plano cerca en $z=20$ y la esfera está fuera de la vista.
 
-También es posible el plano lejos está en $$z=9$$ y tampoco podemos ver la esfera en la vista.
+También es posible el plano lejos está en $z=9$ y tampoco podemos ver la esfera en la vista.
 
 ***5. Como puedes aumentar el ángulo de la cámara. Qué efecto tiene disminuir el ángulo de la cámara.***
 
