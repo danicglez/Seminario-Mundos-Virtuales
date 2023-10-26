@@ -120,10 +120,7 @@ Es mejor elegir el valor "Perspective", así los objetos más cercanos a la cám
 ***7. Especifica las rotaciones que se han indicado en los ejercicios previos con la utilidad quaternion.***
 
 Podemos establecer un nuevo cuaternión para la propiedad rotation del transform, lo que hará que el objeto rote continuamente los grados especificados. Para que sean los 30 grados en el eje Y del ejercicio 2 haríamos lo siguiente:
-
-```
-transform.rotation = Quaternion.Euler(0, 30, 0);
-```
+`transform.rotation = Quaternion.Euler(0, 30, 0)`
 
 ***8. ¿Como puedes averiguar la matriz de proyección en perspectiva que se ha usado para proyectar la escena al último frame renderizado?***
 
@@ -231,3 +228,4 @@ $$\begin{pmatrix}
 
 ***15. ¿Como puedes calcular las coordenadas del sistema de referencia de un objeto con las siguientes propiedades del Transform:?: Position (3, 1, 1), Rotation (45, 0, 45)***
 
+La propiedad 'position' del 'Transform' guarda la posición del objecto en la escena, es decir, en el sistema mundial. En concreto, dicha propiedad lo que guarda es la posición del componente 'Transform' y este componente se corresponde con el sistema de referencia local del objeto. En conclusión, no es necesario hacer ningún cálculo pues ya se conocen las coordenadas del sistema de referencia del objecto conociendo su posición, ya que estos coinciden.
