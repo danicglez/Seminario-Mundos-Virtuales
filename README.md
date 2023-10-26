@@ -92,11 +92,8 @@ Si cambiamos el plano cerca en $z=9.7$, recortamos la esfera:
 
 ***4. Sitúa la esfera de radio 1 en el campo de visión de la cámara y configura el volumen de vista para que la deje fuera de la vista.***
 
-La esfera y la cámara tienen la misma posición.
-
-Por ejemplo podemos cambiar el plano cerca en $z=20$ y la esfera está fuera de la vista.
-
-También es posible el plano lejos está en $z=9$ y tampoco podemos ver la esfera en la vista.
+Si la esfera y la cámara tienen la misma posición que el ejercicio anterior, por ejemplo, podemos cambiar el plano cerca en $z=20$ y la esfera estará fuera de la vista.
+También quedará fuera de la vista si cambiamos el plano lejos en $z=9$.
 
 ***5. Como puedes aumentar el ángulo de la cámara. Qué efecto tiene disminuir el ángulo de la cámara.***
 
@@ -122,7 +119,11 @@ Es mejor elegir el valor "Perspective", así los objetos más cercanos a la cám
 
 ***7. Especifica las rotaciones que se han indicado en los ejercicios previos con la utilidad quaternion.***
 
-No sé?
+Podemos establecer un nuevo cuaternión para la propiedad rotation del transform, lo que hará que el objeto rote continuamente los grados especificados. Para que sean los 30 grados en el eje Y del ejercicio 2 haríamos lo siguiente:
+
+```
+transform.rotation = Quaternion.Euler(0, 30, 0);
+```
 
 ***8. ¿Como puedes averiguar la matriz de proyección en perspectiva que se ha usado para proyectar la escena al último frame renderizado?***
 
@@ -142,38 +143,91 @@ La propiedad `Camera.worldToCameraMatrix` de la cámara es la matriz que permite
 
 ***12. Especifica la matriz de la proyección usado en un instante de la ejecución del ejercicio 1 de la práctica 1.***
 
-Esta matriz obtenemos con `cam.projectionMatrix`
-$$\begin{pmatrix}
-1.53 & 0 & 0 & 0\\
-0 & 2.75 & 0 & 0\\
-0 & 0 & -1 & -0.4\\
-0 & 0 & -1 & 0
-\end{pmatrix}$$
+Esta matriz se obtiene con la propiedad `Camera.previousViewProjectionMatrix` de la cámara. El código sería:
 
-![projection_matrix](pregunta_12.PNG)
+```
+public class seminario : MonoBehaviour
+{
+
+    Camera cam;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        cam = GetComponent<Camera>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Debug.Log(cam.previousViewProjectionMatrix);
+    }
+}
+```
+
+$$\begin{pmatrix}
+1.27101 & 0 & 0 & -0.25420\\
+0 & -2.74748 & 0 & 3.77778\\
+0 & 0 & -0.0004 & 0.19848\\
+0 & 0 & 1 & 4
+\end{pmatrix}$$
 
 ***13. Especifica la matriz de modelo y vista de la escena del ejercicio 1 de la práctica 1.***
 
-1. matriz de modelo
+Para obtener dicha matriz primero necesitamos ambas matrices por separado:
 
-no sé?
+*a. matriz de modelo:*
 
-2. matriz de vista
+Esta matriz se obtiene a través de `Transform.localToWorldMatrix`:
 
-Esta matriz obtenemos con `cam.worldToCameraMatrix`
 $$\begin{pmatrix}
--0.56 & 0 & 0.83 & -3.25\\
--0.10 & 0.99 & -0.07 & 0\\
-0.82 & 0.12 & 0.56 & -16.82\\
-0 & 0 & 0 & 1
+0.99996 &	-0.00019 & -0.00894 &	0.20371\\
+0.00006 &	0.99989 &	-0.01477 &	1.36406\\
+0.00895 &	0.01477 &	0.99985 &	-4.00015\\
+0 &	0 &	0 &	1
 \end{pmatrix}$$
 
-![vista_matrix](pregunta_13.PNG)
+*b. matriz de vista:*
+
+Esta se obtiene a través de `Camera.worldToCameraMatrix`:
+
+$$\begin{pmatrix}
+0.99996 &	0.00006 &	0.00895	& -0.16799\\
+-0.00019 &	0.99989 &	0.01477 &	-1.30481\\
+0.00894 &	0.01477 &	-0.99985 &	-4.02152\\
+0 & 0 &	0 &	1
+\end{pmatrix}$$
+
+Ahora, si las multiplicamos, obtenemos la matriz de modelo y vista:
+
+$$\begin{pmatrix}
+0.99984 &	-0.00026 &	0.01789 &	0.07194\\
+-0.00026 &	0.99956 &	0.02953 &	0.11877\\
+0.01789 &	0.02953 &	-0.9994 &	-8.04185\\
+0 &	0 &	0 &	1
+\end{pmatrix}$$
 
 ***14. Aplica una rotación en el start de uno de los objetos de la escena y muestra la matriz de cambio al sistema de referencias mundial.***
 
-TBD
+La propiedad `Transform.worldToLocalMatrix` es lo que queremos.
+
+*a. Antes de la rotación:*
+
+$$\begin{pmatrix}
+1 & 0 &	0 &	0\\
+0 &	1 &	0 &	0\\
+0 &	0 &	1 &	0\\
+0 &	0 &	0 &	1
+\end{pmatrix}$$
+
+*b. Después de la rotación:*
+
+$$\begin{pmatrix}
+0.99863 &	0 &	0.05234 &	0\\
+0 &	1 &	0 &	0\\
+-0.05234 & 0 &	0.99863 &	0\\
+0 &	0 &	0 &	1
+\end{pmatrix}$$
 
 ***15. ¿Como puedes calcular las coordenadas del sistema de referencia de un objeto con las siguientes propiedades del Transform:?: Position (3, 1, 1), Rotation (45, 0, 45)***
 
-TBD
