@@ -206,7 +206,7 @@ $$\begin{pmatrix}
 
 ***14. Aplica una rotación en el start de uno de los objetos de la escena y muestra la matriz de cambio al sistema de referencias mundial.***
 
-La propiedad `Transform.worldToLocalMatrix` es lo que queremos.
+La propiedad `Transform.localToWorldMatrix` es lo que queremos.
 
 *a. Antes de la rotación:*
 
@@ -220,12 +220,12 @@ $$\begin{pmatrix}
 *b. Después de la rotación:*
 
 $$\begin{pmatrix}
-0.99863 &	0 &	0.05234 &	0\\
+0.99863 &	0 &	-0.05234 &	0\\
 0 &	1 &	0 &	0\\
--0.05234 & 0 &	0.99863 &	0\\
+0.05234 & 0 &	0.99863 &	0\\
 0 &	0 &	0 &	1
 \end{pmatrix}$$
 
 ***15. ¿Como puedes calcular las coordenadas del sistema de referencia de un objeto con las siguientes propiedades del Transform:?: Position (3, 1, 1), Rotation (45, 0, 45)***
 
-La propiedad 'position' del 'Transform' guarda la posición del objecto en la escena, es decir, en el sistema mundial. En concreto, dicha propiedad lo que guarda es la posición del componente 'Transform' y este componente se corresponde con el sistema de referencia local del objeto. En conclusión, no es necesario hacer ningún cálculo pues ya se conocen las coordenadas del sistema de referencia del objecto conociendo su posición, ya que estos coinciden.
+La propiedad 'position' del 'Transform' guarda la posición del objecto en la escena, es decir, en el sistema mundial. Por tanto, para conocer las coordenadas del sistema de referencia del objeto hay que hacer las operaciones correspondientes con la posición y la propiedad `Transform.WorldToLocalMatrix`.
